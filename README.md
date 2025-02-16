@@ -1,4 +1,4 @@
-# machineLearningNationalBasketballAssociationGamePredictor
+# Machine Learning NBA Game Predictor
 
 - Built a machine learning model to predict NBA game winners using box score data from seven seasons.
 - Preprocessed and cleaned 17,000+ rows of game data by removing duplicate columns and sorting chronologically to ensure accurate feature selection.
