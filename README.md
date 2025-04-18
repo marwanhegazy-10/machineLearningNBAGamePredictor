@@ -1,6 +1,6 @@
 # RimPredictor: Machine Learning NBA Game Predictor
 
-This repository provides tools for scraping, processing, and analyzing NBA game data from [Basketball Reference](https://www.basketball-reference.com). It includes functionalities to scrape game schedules, box scores, and player statistics, as well as a machine learning pipeline for predicting game outcomes.
+**RimPredictor** is a comprehensive NBA game prediction tool that leverages machine learning. This repository provides tools for scraping, processing, and analyzing NBA game data from [Basketball Reference](https://www.basketball-reference.com). It includes functionalities to scrape game schedules, box scores, and player statistics, as well as a machine learning pipeline for predicting game outcomes.
 
 ## Features
 
@@ -30,10 +30,7 @@ Run the scraping functions to download NBA schedules, standings, and box scores.
 
 #### Example:
 ```python
-from scraper import scrape_season
-
-# Scrape data for a specific season
-await scrape_season(2022)
+# Use the `get_data.ipynb` notebook to scrape data
 ```
 
 ### 2. Data Cleaning and Processing
@@ -41,32 +38,15 @@ Process the scraped HTML files into a structured DataFrame.
 
 #### Example:
 ```python
-from data_processor import process_box_scores
-
-# Process all box scores
-df = process_box_scores()
+# Use the `parse_data.ipynb` notebook to clean and process data
 ```
 
-### 3. Rolling Averages
-Calculate rolling averages for teams to include recent performance trends.
-
-#### Example:
-```python
-from rolling_averages import calculate_rolling_averages
-
-# Calculate rolling averages
-df_rolling = calculate_rolling_averages(df)
-```
-
-### 4. Predicting Game Outcomes
+### 3. Predicting Game Outcomes
 Use the machine learning pipeline to predict game outcomes based on historical data.
 
 #### Example:
 ```python
-from predictor import backtest
-
-# Train and test the model
-predictions = backtest(df, model, predictors)
+# Use the `predict.ipynb` notebook to train and test the model
 ```
 
 ## Key Results
@@ -74,12 +54,15 @@ predictions = backtest(df, model, predictors)
 - **Prediction Accuracy**: Achieved a prediction accuracy of ~63% using ridge regression and selected features.
 - **Home Advantage Insights**: Found that home teams win about 57% of games.
 
-## Data Workflow
+## Directory Structure
 
-1. Scrape NBA schedules and game data.
-2. Process and clean the scraped data.
-3. Transform the data into rolling averages and features.
-4. Train a machine learning model to predict game outcomes.
+```
+.
+├── README.md               # Project documentation
+├── get_data.ipynb          # Notebook for scraping NBA data
+├── parse_data.ipynb        # Notebook for cleaning and processing data
+├── predict.ipynb           # Notebook for training and predicting game outcomes
+```
 
 ## Requirements
 
@@ -88,21 +71,6 @@ predictions = backtest(df, model, predictors)
 - BeautifulSoup
 - Playwright
 - scikit-learn
-
-## Directory Structure
-
-```
-.
-├── data/                   # Raw and processed data
-│   ├── standings/          # Scraped standings data
-│   ├── scores/             # Scraped box score data
-├── notebooks/              # Jupyter notebooks for analysis
-├── scraper.py              # Scripts for web scraping
-├── data_processor.py       # Scripts for data cleaning and processing
-├── rolling_averages.py     # Rolling average calculations
-├── predictor.py            # Machine learning pipeline
-└── README.md               # Project documentation
-```
 
 ## Acknowledgments
 
